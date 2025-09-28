@@ -7,7 +7,7 @@ export default function Sites() {
 
   // שליפת כל האתרים מהשרת
   useEffect(() => {
-    axios.get("http://localhost:3000/api/site")
+    axios.get("http://localhost:3000/site")
       .then(res => setSites(res.data))
       .catch(err => console.error(err));
   }, []);
@@ -16,7 +16,7 @@ export default function Sites() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3000/api/site", form);
+      const res = await axios.post("http://localhost:3000/site", form);
       setSites([...sites, res.data]); // עדכון הרשימה
       setForm({ name: "", url: "", image: "", score: 0 }); // איפוס הטופס
     } catch (err) {
