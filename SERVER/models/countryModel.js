@@ -9,7 +9,8 @@ const countrySchema = new mongoose.Schema({
   date:{
     type:Date, default:Date.now()
   },
-  user_id:String
+  user_id:String,
+  
 })
 
 exports.CountryModel = mongoose.model("countries",countrySchema);
